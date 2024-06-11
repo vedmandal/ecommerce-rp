@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended:true}))
 app.use("/api/v1/auth",AuthRoute);
 app.use("/api/v1/category",CategoryRoute);
 app.use("/api/v1/product",ProductRoute);
-app.get('*',function(req,res){
+app.use('*',function(req,res){
     res.sendFile(path.join(__dirname,'./client/build/index.html'))
 })
 connectdatabase();
