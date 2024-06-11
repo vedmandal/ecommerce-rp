@@ -14,6 +14,7 @@ import Razorpay from "razorpay";
 const app=express();
 
 dotenv.config();
+connectdatabase();
 const __filename=fileURLToPath(import.meta.url)
 const __dirname=path.dirname(__filename);
 
@@ -33,7 +34,7 @@ app.use("/api/v1/product",ProductRoute);
 app.use('*',function(req,res){
     res.sendFile(path.join(__dirname,'./client/build/index.html'))
 })
-connectdatabase();
+
 
 
 
